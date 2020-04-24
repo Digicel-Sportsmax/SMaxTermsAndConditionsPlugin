@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55c4a113-3488-40d9-8403-416e51c5acf1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugin-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SMaxTermsAndConditionsPlugin.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/SMaxTermsAndConditionsPlugin.podspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/specs/SMaxTermsAndConditionsPlugin/0.0.1/SMaxTermsAndConditionsPlugin.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/specs/SMaxTermsAndConditionsPlugin/0.0.1/SMaxTermsAndConditionsPlugin.podspec" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +55,7 @@
       <option name="presentableId" value="Default" />
       <updated>1587760994723</updated>
       <workItem from="1587760997979" duration="75000" />
-      <workItem from="1587761091855" duration="2584000" />
+      <workItem from="1587761091855" duration="2840000" />
     </task>
     <servers />
   </component>

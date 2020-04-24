@@ -16,8 +16,8 @@ Pod::Spec.new do |s|
 
     s.subspec 'Core' do |c|
     c.frameworks = 'UIKit'
-    c.source_files = 'PluginClasses/*.{swift,h,m}'
-    c.resources = ['Resources/*.{xib,png,plist}']
+    c.source_files = 'Classes/*.{swift,h,m}'
+    c.resources = ['Resources/*.{storyboard,xib,png,plist}']
     c.dependency 'ZappPlugins'
     c.dependency 'ApplicasterSDK'
   end
