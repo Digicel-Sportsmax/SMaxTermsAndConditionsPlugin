@@ -49,8 +49,9 @@ import ApplicasterSDK
     
     public func executeAfterAppRootPresentation(displayViewController: UIViewController?, completion: (() -> Void)?) {
         if let showScreen = configurationJSON?["show_screen_at_launch"] as? String{
-            if (showScreen == "1"){
+            if (showScreen == "1" && !SMaxTermsAndConditionPreferencesManager.getStatusOfTermsScreen()) {
                 self.showTermsScreen()
+                SMaxTermsAndConditionPreferencesManager.termsScreenHasBeenShown()
             }
         }
     }
