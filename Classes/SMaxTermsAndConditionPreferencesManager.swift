@@ -16,10 +16,6 @@ public class SMaxTermsAndConditionPreferencesManager {
     }
 
     static func getStatusOfTermsScreen() -> Bool {
-        guard let data = UserDefaults.standard.object(forKey: self.termsScreenShown) as? Bool else {
-            return false
-        }
-
         return false
     }
 }
