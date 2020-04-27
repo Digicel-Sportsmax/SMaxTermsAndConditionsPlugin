@@ -20,6 +20,6 @@ public class SMaxTermsAndConditionPreferencesManager {
             return false
         }
 
-        return UserDefaults.standard.bool(forKey: self.termsScreenShown)
+        return false
     }
 }
