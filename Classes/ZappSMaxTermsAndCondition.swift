@@ -31,14 +31,40 @@ import ApplicasterSDK
         }
     }
     
-    func showTermsScreen(){
+    func showTermsScreen() {
         let storyboard = UIStoryboard(name: self.sportsMaxTermsStoryboard, bundle: nil)
 
         if let termsViewController = storyboard.instantiateViewController(withIdentifier: self.sportsMaxTermsViewController) as? SportsMaxTermsViewController {
             termsViewController.delegate = self
-            if let termAndConditionText = configurationJSON?["terms_condition_text"] as? String{
+
+            if let termAndConditionText = configurationJSON?["terms_condition_text"] as? String {
                 termsViewController.terms_condition_text = termAndConditionText
             }
+            
+            if let navHeaderImage = configurationJSON?["navigation_header_image"] as? String {
+                termsViewController.navHeaderImage = navHeaderImage
+            }
+            
+            if let navHeaderText = configurationJSON?["navigation_header_text"] as? String {
+                termsViewController.navHeaderText = navHeaderText
+            }
+            
+            if let navBarBackgroundColor = configurationJSON?["navigation_header_background"] as? String {
+                termsViewController.navBarBackgroundColor = navBarBackgroundColor
+            }
+            
+            if let agreeButtonText = configurationJSON?["agree_button_text"] as? String {
+                termsViewController.agreeButtonText = agreeButtonText
+            }
+            
+            if let agreeButtonTextColor = configurationJSON?["agree_button_text_color"] as? String {
+                termsViewController.agreeButtonTextColor = agreeButtonTextColor
+            }
+            
+            if let agreeButtonBackgroundColor = configurationJSON?["agree_button_bg_color"] as? String {
+                termsViewController.agreeButtonBackgroundColor = agreeButtonBackgroundColor
+            }
+            
             termsViewController.modalPresentationStyle = .fullScreen
             navigationController = UINavigationController(rootViewController: termsViewController)
             if let nav = navigationController{

@@ -36,10 +36,44 @@
       "tooltip_text": "Flag to indicate if to present the screen on app launch"
     },
     {
+      "type": "uploader",
+      "key": "navigation_header_image",
+      "tooltip_text": "image to be shown in the header"
+    },
+    {
+      "type": "text_input",
+      "key": "navigation_header_text",
+      "tooltip_text": "text to be shown in the header if no image is uploaded"
+    },
+    {
+      "type": "color_picker",
+      "key": "navigation_header_background",
+      "tooltip_text": "Navigation Header background Color",
+      "initial_value": "#356bac"
+    },
+    {
       "type": "textarea",
       "key": "terms_condition_text",
       "tooltip_text": "terms and condition text"
+    },
+    {
+      "type": "text_input",
+      "key": "agree_button_text",
+      "tooltip_text": "Agree Button Text"
+    },
+    {
+      "type": "color_picker",
+      "key": "agree_button_text_color",
+      "tooltip_text": "Agree Button Text Color",
+      "initial_value": "#FF0000"
+    },
+    {
+      "type": "color_picker",
+      "key": "agree_button_bg_color",
+      "tooltip_text": "Agree Button Text Color",
+      "initial_value": "#356bac"
     }
+
   ],
   "targets": [
     "mobile"
