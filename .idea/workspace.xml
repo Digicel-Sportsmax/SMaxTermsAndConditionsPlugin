@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="55c4a113-3488-40d9-8403-416e51c5acf1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/SportsMaxTermsViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/SportsMaxTermsViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes/SMaxTermsAndConditionPreferencesManager.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/SMaxTermsAndConditionPreferencesManager.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Classes/ZappSMaxTermsAndCondition.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/ZappSMaxTermsAndCondition.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/SMaxTermsAndConditionsStoryboard.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/SMaxTermsAndConditionsStoryboard.storyboard" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugin-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugin-manifest.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +57,7 @@
       <updated>1587760994723</updated>
       <workItem from="1587760997979" duration="75000" />
       <workItem from="1587761091855" duration="3545000" />
-      <workItem from="1588160687619" duration="64000" />
+      <workItem from="1588160687619" duration="404000" />
     </task>
     <servers />
   </component>

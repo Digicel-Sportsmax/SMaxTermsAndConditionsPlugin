@@ -7,13 +7,19 @@
 import Foundation
 
 
-public class SMaxTermsAndConditionPreferencesManager {
+class SMaxTermsAndConditionPreferencesManager {
+    static let sharedInstance = SMaxTermsAndConditionPreferencesManager()
 
-    static func termsScreenHasBeenShown() {
+    fileprivate let defaults = UserDefaults()
 
+    // MARK: writing values methods
+    func setBool(_ value: Bool, forKey defaultName: String) {
+        defaults.set(value, forKey: defaultName)
+        defaults.synchronize()
     }
 
-    static func getStatusOfTermsScreen() -> Bool {
-        return false
+    func boolForKey(_ defaultName: String ) -> Bool? {
+        return defaults.bool(forKey: defaultName)
     }
+
 }

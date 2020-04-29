@@ -46,7 +46,7 @@
       "tooltip_text": "text to be shown in the header if no image is uploaded"
     },
     {
-      "type": "color_picker",
+      "type": "text_input",
       "key": "navigation_header_background",
       "tooltip_text": "Navigation Header background Color",
       "initial_value": "#356bac"
@@ -62,13 +62,13 @@
       "tooltip_text": "Agree Button Text"
     },
     {
-      "type": "color_picker",
+      "type": "text_input",
       "key": "agree_button_text_color",
       "tooltip_text": "Agree Button Text Color",
       "initial_value": "#FF0000"
     },
     {
-      "type": "color_picker",
+      "type": "text_input",
       "key": "agree_button_bg_color",
       "tooltip_text": "Agree Button Text Color",
       "initial_value": "#356bac"
