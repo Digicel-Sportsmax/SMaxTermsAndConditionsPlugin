@@ -3,10 +3,10 @@ Pod::Spec.new do |s|
     s.version             = '0.0.1'
     s.summary             = 'SportsMax Terms and Condition Screen'
     s.description         = 'SportsMax Terms and Condition Screen'
-    s.homepage            = 'https://github.com/mohieddinezarif/SMaxTermsAndConditionsPlugin'
+    s.homepage            = 'https://github.com/Digicel-Sportsmax/SMaxTermsAndConditionsPlugin.git'
     s.license             = 'MIT'
     s.author              = { "Mohieddine Zarif" => "mohieddine.zarif@gotocme.com" }
-    s.source              = { :git => 'git@github.com:mohieddinezarif/SMaxTermsAndConditionsPlugin.git', :tag => s.version.to_s }
+    s.source              = { :git => 'git@github.com:Digicel-Sportsmax/SMaxTermsAndConditionsPlugin.git', :tag => s.version.to_s }
 
     s.ios.deployment_target = "10.0"
     s.platform            = :ios, '10.0'

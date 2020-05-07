@@ -7,7 +7,7 @@
     "require_startup_execution": true
   },
   "dependency_repository_url": [
-    "https://github.com/mohieddinezarif/SMaxTermsAndConditionsPlugin.git"
+    "https://github.com/Digicel-Sportsmax/SMaxTermsAndConditionsPlugin.git"
   ],
   "platform": "ios",
   "author_name": "Mohieddine Zarif",
