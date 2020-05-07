@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="55c4a113-3488-40d9-8403-416e51c5acf1" name="Default Changelist" comment="" />
+    <list default="true" id="55c4a113-3488-40d9-8403-416e51c5acf1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes/SportsMaxTermsViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/SportsMaxTermsViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SMaxTermsAndConditionsPlugin.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/SMaxTermsAndConditionsPlugin.podspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugin-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugin-manifest.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,6 +59,7 @@
       <workItem from="1587761091855" duration="3545000" />
       <workItem from="1588160687619" duration="809000" />
       <workItem from="1588840797392" duration="300000" />
+      <workItem from="1588889744374" duration="226000" />
     </task>
     <servers />
   </component>
