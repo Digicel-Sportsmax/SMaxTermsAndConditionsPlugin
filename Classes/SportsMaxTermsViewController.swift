@@ -25,7 +25,7 @@ class SportsMaxTermsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let text = terms_condition_text {
-            self.privacyTextLabel.text = text
+            self.privacyTextLabel.attributedText = text.htmlAttributedString()
         }
         
         if let bgColor = navBarBackgroundColor {
@@ -34,7 +34,7 @@ class SportsMaxTermsViewController: UIViewController {
          if let imageUrlString = navHeaderImage,
             let imageUrl:URL = URL(string: imageUrlString) {
             let imageData:NSData = NSData(contentsOf: imageUrl)!
-            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 120, height: 20))
+            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 120, height: 17))
             let image = UIImage(data: imageData as Data)
             imageView.image = image
             imageView.contentMode = .scaleAspectFit
@@ -64,4 +64,17 @@ class SportsMaxTermsViewController: UIViewController {
         }
     }
 
+}
+
+
+// TODO: implement a helper plugin
+extension String {
+    func htmlAttributedString() -> NSAttributedString? {
+        guard let data = self.data(using: String.Encoding.utf16, allowLossyConversion: false) else { return nil }
+        guard let html = try? NSMutableAttributedString(
+            data: data,
+            options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html],
+            documentAttributes: nil) else { return nil }
+        return html
+    }
 }
