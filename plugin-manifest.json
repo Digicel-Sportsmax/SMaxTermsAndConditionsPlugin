@@ -12,7 +12,7 @@
   "platform": "ios",
   "author_name": "Mohieddine Zarif",
   "author_email": "mohieddine.zarif@gotocme.com",
-  "manifest_version": "0.0.3",
+  "manifest_version": "0.0.4",
   "name": "[Sportsmax]: Terms & Conditions",
   "description": "Sportsmax Terms & Conditions",
   "type": "general",
@@ -21,7 +21,7 @@
   "ui_builder_support": true,
   "preload": true,
   "dependency_name": "SMaxTermsAndConditionsPlugin",
-  "dependency_version": "0.0.3",
+  "dependency_version": "0.0.4",
   "whitelisted_account_ids": [
     "5af949534da8f300080050f9"
   ],

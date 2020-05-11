@@ -68,15 +68,16 @@ import ApplicasterSDK
                 termsViewController.agreeButtonBackgroundColor = agreeButtonBackgroundColor
             }
 
-            termsViewController.modalPresentationStyle = .overFullScreen
-
-            if #available(iOS 13.0, *) {
-                termsViewController.modalPresentationStyle = .fullScreen
-            }
-
             navigationController = UINavigationController(rootViewController: termsViewController)
             if let nav = navigationController{
-                APApplicasterController.sharedInstance()?.rootViewController.topmostModal()?.present(nav, animated: true, completion: nil)
+                nav.modalPresentationStyle = .overFullScreen
+
+                if #available(iOS 13.0, *) {
+                    nav.modalPresentationStyle = .fullScreen
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.50) {
+                    APApplicasterController.sharedInstance()?.rootViewController.topmostModal()?.present(nav, animated: true, completion: nil)
+                }
             }
         }
     }
