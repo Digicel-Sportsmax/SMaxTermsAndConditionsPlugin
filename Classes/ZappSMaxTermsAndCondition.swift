@@ -68,7 +68,12 @@ import ApplicasterSDK
                 termsViewController.agreeButtonBackgroundColor = agreeButtonBackgroundColor
             }
 
-            termsViewController.modalPresentationStyle = .fullScreen
+            termsViewController.modalPresentationStyle = .overFullScreen
+
+            if #available(iOS 13.0, *) {
+                termsViewController.modalPresentationStyle = .fullScreen
+            }
+
             navigationController = UINavigationController(rootViewController: termsViewController)
             if let nav = navigationController{
                 APApplicasterController.sharedInstance()?.rootViewController.topmostModal()?.present(nav, animated: true, completion: nil)
