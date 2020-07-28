@@ -11,3 +11,7 @@ import AVFoundation
 @objc public protocol SportsMaxTermsBaseProtocol {
     func userDidSelectToClose()
 }
+
+@objc public protocol SportsMaxDataConsentBaseProtocol {
+    func useDidSelectToClose()
+}

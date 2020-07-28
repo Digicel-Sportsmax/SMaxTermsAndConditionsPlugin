@@ -43,6 +43,10 @@ import ApplicasterSDK
             if let termAndConditionText = configurationJSON?["terms_condition_text"] as? String {
                 termsViewController.terms_condition_text = termAndConditionText
             }
+            
+            if let dataConsentText = configurationJSON?["data_consent_text"] as? String {
+                termsViewController.data_consent_text = dataConsentText
+            }
 
             if let navHeaderImage = configurationJSON?["navigation_header_image"] as? String {
                 termsViewController.navHeaderImage = navHeaderImage
@@ -60,10 +64,15 @@ import ApplicasterSDK
                 termsViewController.agreeButtonText = agreeButtonText
             }
 
+            if let nextButtonText = configurationJSON?["next_button_text"] as? String {
+                termsViewController.nextButtonText = nextButtonText
+            }
+            
             if let agreeButtonTextColor = configurationJSON?["agree_button_text_color"] as? String {
                 termsViewController.agreeButtonTextColor = agreeButtonTextColor
             }
 
+            
             if let agreeButtonBackgroundColor = configurationJSON?["agree_button_bg_color"] as? String {
                 termsViewController.agreeButtonBackgroundColor = agreeButtonBackgroundColor
             }
@@ -83,7 +92,11 @@ import ApplicasterSDK
     }
 
     public func executeAfterAppRootPresentation(displayViewController: UIViewController?, completion: (() -> Void)?) {
-        if let showScreen = configurationJSON?["show_screen_at_launch"] as? String{
+        if let alwaysShowScreen = configurationJSON?["always_show_screen_at_launch"] as? String {
+            if (alwaysShowScreen == "1") {
+                self.showTermsScreen()
+            }
+        } else if let showScreen = configurationJSON?["show_screen_at_launch"] as? String {
             if (showScreen == "1" && !(SMaxTermsAndConditionPreferencesManager.sharedInstance.boolForKey(ZappSMaxTermsAndCondition.self.termsScreenKey) ?? false)) {
                 self.showTermsScreen()
             }

@@ -88,6 +88,16 @@
       "key": "agree_button_bg_color",
       "tooltip_text": "Agree / Next Button background Color",
       "initial_value": "#356bac"
+    },
+   {
+      "type": "text_input",
+      "key": "terms_and_condition_checkbox",
+      "tooltip_text": "terms and condition checkbox"
+    },
+   {
+      "type": "text_input",
+      "key": "data_consent_checkbox",
+      "tooltip_text": "data consent checkbox"
     }
 
   ],

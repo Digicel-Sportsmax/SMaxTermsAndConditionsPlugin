@@ -7,20 +7,29 @@
 
 import Foundation
 import UIKit
+import DLRadioButton
 
-class SportsMaxTermsViewController: UIViewController {
+class SportsMaxTermsViewController: UIViewController, SportsMaxDataConsentBaseProtocol {
     
+    fileprivate let sportsMaxTermsStoryboard = "SMaxTermsAndConditionsStoryboard"
+    fileprivate let sportsMaxDataConsentViewController = "SportsMaxDataConsentViewController"
+
+
     public var delegate: SportsMaxTermsBaseProtocol?
+    public var data_consent_text: String?
     public var terms_condition_text: String?
     public var navHeaderImage: String?
     public var navHeaderText: String?
     public var navBarBackgroundColor: String?
     public var agreeButtonText: String?
+    public var nextButtonText: String?
     public var agreeButtonBackgroundColor: String?
     public var agreeButtonTextColor: String?
 
     @IBOutlet weak var privacyTextLabel: UILabel!
     @IBOutlet weak var agreeButton: UIButton!
+    @IBOutlet weak var iAgreeCheckbox: DLRadioButton!
+    @IBOutlet weak var agreeLabel: UILabel!
     
 
     override func viewDidLoad() {
@@ -45,8 +54,8 @@ class SportsMaxTermsViewController: UIViewController {
             self.navigationController?.navigationBar.tintColor = UIColor.white
         }
         
-        if let agreeButtonTxt = self.agreeButtonText {
-            self.agreeButton.setTitle(agreeButtonTxt, for: .normal)
+        if let nextButtonTxt = self.nextButtonText {
+            self.agreeButton.setTitle(nextButtonTxt, for: .normal)
         }
         
         if let agreeButtonBgColor = self.agreeButtonBackgroundColor {
@@ -58,11 +67,28 @@ class SportsMaxTermsViewController: UIViewController {
         }
         
     }
+    
+    func useDidSelectToClose() {
+        self.delegate?.userDidSelectToClose()
+    }
 
     @IBAction func agreeBtnDidPress(_ sender: Any) {
-        if let delegate = delegate {
-            delegate.userDidSelectToClose()
+        let storyboard = UIStoryboard(name: self.sportsMaxTermsStoryboard, bundle: nil)
+        
+        if let dataConsentViewController = storyboard.instantiateViewController(withIdentifier: self.sportsMaxDataConsentViewController) as? SportsMaxDataConsentViewController {
+            
+            dataConsentViewController.data_consent_text = self.data_consent_text
+            dataConsentViewController.navHeaderImage = navHeaderImage
+            dataConsentViewController.navHeaderText = navHeaderText
+            dataConsentViewController.navBarBackgroundColor = navBarBackgroundColor
+            dataConsentViewController.agreeButtonText = agreeButtonText
+            dataConsentViewController.agreeButtonTextColor = agreeButtonTextColor
+            dataConsentViewController.delegate = self
+            self.navigationController?.pushViewController(dataConsentViewController, animated: true)
+            
         }
+        
+        
     }
 
 }
