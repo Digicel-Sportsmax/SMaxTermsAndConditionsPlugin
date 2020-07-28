@@ -58,12 +58,12 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d0d-pY-91z">
                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="25"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LuG-QO-Rg5" customClass="Checkbox" customModule="SimpleCheckbox">
-                                                                <rect key="frame" x="1" y="2.5" width="20" height="20"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LuG-QO-Rg5" customClass="VKCheckbox" customModule="SMaxTermsAndConditionsPlugin" customModuleProvider="target">
+                                                                <rect key="frame" x="1" y="5" width="15" height="15"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="20" id="UdJ-H1-OhL"/>
-                                                                    <constraint firstAttribute="width" constant="20" id="nAi-b0-P1h"/>
+                                                                    <constraint firstAttribute="height" constant="15" id="UdJ-H1-OhL"/>
+                                                                    <constraint firstAttribute="width" constant="15" id="nAi-b0-P1h"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
@@ -162,7 +162,7 @@
                     <connections>
                         <outlet property="agreeButton" destination="waX-EZ-bxh" id="eu8-9o-AY9"/>
                         <outlet property="agreeLabel" destination="1pv-ue-100" id="Jru-dk-LD7"/>
-                        <outlet property="iAgreeCheckbox" destination="LuG-QO-Rg5" id="yDb-AI-9ch"/>
+                        <outlet property="iAgreeCheckbox" destination="LuG-QO-Rg5" id="N9A-cb-HuW"/>
                         <outlet property="privacyTextLabel" destination="YLW-gb-l1X" id="hJR-6k-PLJ"/>
                     </connections>
                 </viewController>
@@ -220,12 +220,12 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgH-pK-F6D">
                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="25"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8my-h1-7Ug" customClass="Checkbox" customModule="SimpleCheckbox">
-                                                                <rect key="frame" x="1" y="2.5" width="20" height="20"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8my-h1-7Ug" customClass="VKCheckbox" customModule="SMaxTermsAndConditionsPlugin" customModuleProvider="target">
+                                                                <rect key="frame" x="1" y="5" width="15" height="15"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="20" id="7pg-Im-80L"/>
-                                                                    <constraint firstAttribute="width" constant="20" id="Msn-ju-nnh"/>
+                                                                    <constraint firstAttribute="height" constant="15" id="7pg-Im-80L"/>
+                                                                    <constraint firstAttribute="width" constant="15" id="Msn-ju-nnh"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
@@ -325,7 +325,7 @@
                         <outlet property="agreeButton" destination="DBj-Wu-1he" id="HRa-4I-odd"/>
                         <outlet property="agreeLabel" destination="DUa-N6-Y21" id="NT6-AF-iQ0"/>
                         <outlet property="dataConsentTextLabel" destination="p3H-BB-O0P" id="mhk-me-5Lw"/>
-                        <outlet property="iAgreeCheckbox" destination="8my-h1-7Ug" id="ceO-lo-fco"/>
+                        <outlet property="iAgreeCheckbox" destination="8my-h1-7Ug" id="sq3-lq-2BY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8de-ke-31O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
