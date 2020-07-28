@@ -76,6 +76,14 @@ import ApplicasterSDK
             if let agreeButtonBackgroundColor = configurationJSON?["agree_button_bg_color"] as? String {
                 termsViewController.agreeButtonBackgroundColor = agreeButtonBackgroundColor
             }
+            
+            if let termsAndConditionCheckboxTxt = configurationJSON?["terms_and_condition_checkbox"] as? String {
+                termsViewController.termsAndConditionCheckboxText = termsAndConditionCheckboxTxt
+            }
+            
+            if let dataConsentCheckboxTxt = configurationJSON?["data_consent_checkbox"] as? String {
+                termsViewController.dataConsentCheckboxText = dataConsentCheckboxTxt
+            }
 
             navigationController = UINavigationController(rootViewController: termsViewController)
             if let nav = navigationController{

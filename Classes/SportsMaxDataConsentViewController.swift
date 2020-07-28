@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-import DLRadioButton
+import SimpleCheckbox
 
 class SportsMaxDataConsentViewController: UIViewController {
     
@@ -19,16 +19,36 @@ class SportsMaxDataConsentViewController: UIViewController {
     public var agreeButtonText: String?
     public var agreeButtonBackgroundColor: String?
     public var agreeButtonTextColor: String?
-
-    @IBOutlet weak var iAgreeCheckbox: DLRadioButton!
+    public var dataConsentCheckboxText: String?
+    @IBOutlet weak var agreeLabel: UILabel!
+    
+    @IBOutlet weak var iAgreeCheckbox: Checkbox!
+    
     @IBOutlet weak var dataConsentTextLabel: UILabel!
     @IBOutlet weak var agreeButton: UIButton!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.setHidesBackButton(true, animated: false)
         if let text = data_consent_text {
             self.dataConsentTextLabel.attributedText = text.htmlAttributedString()
+        }
+        
+        iAgreeCheckbox.checkedBorderColor = .black
+        iAgreeCheckbox.uncheckedBorderColor = .black
+        iAgreeCheckbox.checkmarkStyle = .tick
+        iAgreeCheckbox.borderStyle = .square
+        iAgreeCheckbox.borderLineWidth = CGFloat(2.0)
+
+        self.agreeButton.isEnabled = false
+        
+        iAgreeCheckbox.valueChanged = { (isChecked) in
+            self.handleNextButton(isChecked)
+        }
+        
+        if let dataCheckboxText = self.dataConsentCheckboxText {
+            self.agreeLabel.text = dataCheckboxText
         }
         
         if let bgColor = navBarBackgroundColor {
@@ -64,6 +84,14 @@ class SportsMaxDataConsentViewController: UIViewController {
     @IBAction func agreeBtnDidPress(_ sender: Any) {
         if let delegate = delegate {
             delegate.useDidSelectToClose()
+        }
+    }
+    
+    fileprivate func handleNextButton(_ isChecked: Bool) {
+        if isChecked {
+            self.agreeButton.isEnabled = true
+        } else {
+            self.agreeButton.isEnabled = false
         }
     }
 

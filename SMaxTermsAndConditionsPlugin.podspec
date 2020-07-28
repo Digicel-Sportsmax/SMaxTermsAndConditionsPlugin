@@ -20,7 +20,6 @@ Pod::Spec.new do |s|
     c.resources = ['Resources/*.{storyboard,xib,png,plist}']
     c.dependency 'ZappPlugins'
     c.dependency 'ApplicasterSDK'
-    c.dependency 'DLRadioButton'
     c.dependency 'SimpleCheckbox'
   end
 

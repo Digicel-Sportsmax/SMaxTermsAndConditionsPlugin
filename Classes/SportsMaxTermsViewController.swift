@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-import DLRadioButton
+import SimpleCheckbox
 
 class SportsMaxTermsViewController: UIViewController, SportsMaxDataConsentBaseProtocol {
     
@@ -25,10 +25,12 @@ class SportsMaxTermsViewController: UIViewController, SportsMaxDataConsentBasePr
     public var nextButtonText: String?
     public var agreeButtonBackgroundColor: String?
     public var agreeButtonTextColor: String?
+    public var termsAndConditionCheckboxText: String?
+    public var dataConsentCheckboxText: String?
 
     @IBOutlet weak var privacyTextLabel: UILabel!
     @IBOutlet weak var agreeButton: UIButton!
-    @IBOutlet weak var iAgreeCheckbox: DLRadioButton!
+    @IBOutlet weak var iAgreeCheckbox: Checkbox!
     @IBOutlet weak var agreeLabel: UILabel!
     
 
@@ -36,6 +38,22 @@ class SportsMaxTermsViewController: UIViewController, SportsMaxDataConsentBasePr
         super.viewDidLoad()
         if let text = terms_condition_text {
             self.privacyTextLabel.attributedText = text.htmlAttributedString()
+        }
+        
+        iAgreeCheckbox.checkedBorderColor = .black
+        iAgreeCheckbox.uncheckedBorderColor = .black
+        iAgreeCheckbox.checkmarkStyle = .tick
+        iAgreeCheckbox.borderStyle = .square
+        iAgreeCheckbox.borderLineWidth = CGFloat(2.0)
+
+        self.agreeButton.isEnabled = false
+        
+        iAgreeCheckbox.valueChanged = { (isChecked) in
+            self.handleNextButton(isChecked)
+        }
+        
+        if let termsCheckboxTxt = self.termsAndConditionCheckboxText {
+            self.agreeLabel.text = termsCheckboxTxt
         }
         
         if let bgColor = navBarBackgroundColor {
@@ -82,12 +100,23 @@ class SportsMaxTermsViewController: UIViewController, SportsMaxDataConsentBasePr
             dataConsentViewController.navHeaderText = navHeaderText
             dataConsentViewController.navBarBackgroundColor = navBarBackgroundColor
             dataConsentViewController.agreeButtonText = agreeButtonText
+            dataConsentViewController.agreeButtonBackgroundColor = agreeButtonBackgroundColor
             dataConsentViewController.agreeButtonTextColor = agreeButtonTextColor
+            dataConsentViewController.dataConsentCheckboxText = dataConsentCheckboxText
             dataConsentViewController.delegate = self
             self.navigationController?.pushViewController(dataConsentViewController, animated: true)
             
         }
         
+        
+    }
+    
+    fileprivate func handleNextButton(_ isChecked: Bool) {
+        if isChecked {
+            self.agreeButton.isEnabled = true
+        } else {
+            self.agreeButton.isEnabled = false
+        }
         
     }
 
