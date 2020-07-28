@@ -21,6 +21,7 @@ Pod::Spec.new do |s|
     c.dependency 'ZappPlugins'
     c.dependency 'ApplicasterSDK'
     c.dependency 'SimpleCheckbox'
+    c.dependency 'GDCheckbox'
   end
 
   s.xcconfig =  { 'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES',
