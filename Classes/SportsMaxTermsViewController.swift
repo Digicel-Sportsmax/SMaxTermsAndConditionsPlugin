@@ -26,6 +26,7 @@ class SportsMaxTermsViewController: UIViewController, SportsMaxDataConsentBasePr
     public var agreeButtonTextColor: String?
     public var termsAndConditionCheckboxText: String?
     public var dataConsentCheckboxText: String?
+    public var shouldShowDataConsentScreen: String?
 
     @IBOutlet weak var iAgreeView: UIView!
     @IBOutlet weak var privacyTextLabel: UILabel!
@@ -68,21 +69,25 @@ class SportsMaxTermsViewController: UIViewController, SportsMaxDataConsentBasePr
     }
 
     @IBAction func agreeBtnDidPress(_ sender: Any) {
-        let storyboard = UIStoryboard(name: self.sportsMaxTermsStoryboard, bundle: nil)
-        
-        if let dataConsentViewController = storyboard.instantiateViewController(withIdentifier: self.sportsMaxDataConsentViewController) as? SportsMaxDataConsentViewController {
+        if let showDataConsentScreen = self.shouldShowDataConsentScreen, showDataConsentScreen == "1" {
+            let storyboard = UIStoryboard(name: self.sportsMaxTermsStoryboard, bundle: nil)
             
-            dataConsentViewController.data_consent_text = self.data_consent_text
-            dataConsentViewController.navHeaderImage = navHeaderImage
-            dataConsentViewController.navHeaderText = navHeaderText
-            dataConsentViewController.navBarBackgroundColor = navBarBackgroundColor
-            dataConsentViewController.agreeButtonText = agreeButtonText
-            dataConsentViewController.agreeButtonBackgroundColor = agreeButtonBackgroundColor
-            dataConsentViewController.agreeButtonTextColor = agreeButtonTextColor
-            dataConsentViewController.dataConsentCheckboxText = dataConsentCheckboxText
-            dataConsentViewController.delegate = self
-            self.navigationController?.pushViewController(dataConsentViewController, animated: true)
-            
+            if let dataConsentViewController = storyboard.instantiateViewController(withIdentifier: self.sportsMaxDataConsentViewController) as? SportsMaxDataConsentViewController {
+                
+                dataConsentViewController.data_consent_text = self.data_consent_text
+                dataConsentViewController.navHeaderImage = navHeaderImage
+                dataConsentViewController.navHeaderText = navHeaderText
+                dataConsentViewController.navBarBackgroundColor = navBarBackgroundColor
+                dataConsentViewController.agreeButtonText = agreeButtonText
+                dataConsentViewController.agreeButtonBackgroundColor = agreeButtonBackgroundColor
+                dataConsentViewController.agreeButtonTextColor = agreeButtonTextColor
+                dataConsentViewController.dataConsentCheckboxText = dataConsentCheckboxText
+                dataConsentViewController.delegate = self
+                self.navigationController?.pushViewController(dataConsentViewController, animated: true)
+                
+            } else {
+                self.useDidSelectToClose()
+            }
         }
         
         

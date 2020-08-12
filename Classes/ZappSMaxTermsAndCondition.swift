@@ -84,6 +84,10 @@ import ApplicasterSDK
             if let dataConsentCheckboxTxt = configurationJSON?["data_consent_checkbox"] as? String {
                 termsViewController.dataConsentCheckboxText = dataConsentCheckboxTxt
             }
+            
+            if let shouldShowDataConsent = configurationJSON?["show_data_consent_at_launch"] as? String {
+                termsViewController.shouldShowDataConsentScreen = shouldShowDataConsent
+            }
 
             navigationController = UINavigationController(rootViewController: termsViewController)
             if let nav = navigationController{
