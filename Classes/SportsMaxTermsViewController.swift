@@ -85,9 +85,9 @@ class SportsMaxTermsViewController: UIViewController, SportsMaxDataConsentBasePr
                 dataConsentViewController.delegate = self
                 self.navigationController?.pushViewController(dataConsentViewController, animated: true)
                 
-            } else {
-                self.useDidSelectToClose()
-            }
+            } 
+        } else {
+            self.useDidSelectToClose()
         }
         
         
